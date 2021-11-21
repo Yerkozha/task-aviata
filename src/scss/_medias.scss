@@ -1,0 +1,100 @@
+$xl-mw: 1540px;
+$lg-mw: 1200px;
+$md-mw: 960px;
+$sm-mw: 720px;
+
+$xl-bp: 1600px;
+$lg-bp: 1440px;
+$md-bp: 1024px;
+$sm-bp: 768px;
+$xs-bp: 576px;
+
+@mixin media-for-width($width) {
+    @media (min-width: #{$width}) {
+        @content;
+    }
+}
+
+@mixin media-for-retina($width) {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1)      and (min-width: #{$width}),
+            only screen and (   min--moz-device-pixel-ratio: 1)      and (min-width: #{$width}),
+            only screen and (     -o-min-device-pixel-ratio: 1/1)    and (min-width: #{$width}),
+            only screen and (        min-device-pixel-ratio: 1)      and (min-width: #{$width}),
+            only screen and (                min-resolution: 192dpi) and (min-width: #{$width}),
+            only screen and (                min-resolution: 2dppx)  and (min-width: #{$width}) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @include media-for-width($xl-bp) {
+        @content;
+    }
+}
+
+@mixin media-xl-retina {
+    @include media-for-retina($xl-bp) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @include media-for-width($lg-bp) {
+        @content;
+    }
+}
+
+@mixin media-lg-retina {
+    @include media-for-retina($lg-bp) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @include media-for-width($md-bp) {
+        @content;
+    }
+}
+
+@mixin media-md-retina {
+    @include media-for-retina($md-bp) {
+        @content;
+    }
+}
+
+@mixin media-sm {
+    @include media-for-width($sm-bp) {
+        @content;
+    }
+}
+
+@mixin media-sm-retina {
+    @include media-for-retina($sm-bp) {
+        @content;
+    }
+}
+
+@mixin media-xs-retina {
+    @include media-for-retina($xs-bp) {
+        @content;
+    }
+}
+
+@mixin media-xs {
+    @include media-for-width($xs-bp) {
+        @content;
+    }
+}
+
+@mixin media-ie {
+    // ie9+ (for applying rules USE !important)
+    @media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+        @content;
+    }
+}
+
+@mixin media-edge {
+    @supports (-ms-accelerator: true) {
+        @content;
+    }
+}

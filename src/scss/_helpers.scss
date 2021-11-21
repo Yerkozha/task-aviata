@@ -1,0 +1,82 @@
+@include b(container) {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+   max-width: 940px;
+    @include media-md {
+        width: $md-mw;
+    }
+
+    @include media-lg {
+        width: $lg-mw;
+    }
+
+    @include media-xl {
+        width: $xl-mw;
+    }
+}
+@include b(main){
+    background-color: #D7D7D7;
+}
+@include b(container-fluid) {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@include b(text) {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 27px;
+    color: #202123;
+
+    @include m(gray) {
+        color: $gray-color;
+    }
+}
+
+@include b(mb-1) {
+    margin-bottom: 10px;
+}
+
+@include b(mb-2) {
+    margin-bottom: 20px;
+}
+
+@include b(mb-3) {
+    margin-bottom: 30px;
+}
+
+@include b(mb-4) {
+    margin-bottom: 40px;
+}
+
+@include b(mb-5) {
+    margin-bottom: 50px;
+}
+
+@include b(mb-6) {
+    margin-bottom: 60px;
+}
+
+@include b(mb-7) {
+    margin-bottom: 70px;
+}
+
+@include b(mb-8) {
+    margin-bottom: 80px;
+}
+
+@include b(link) {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
